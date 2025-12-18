@@ -1,45 +1,112 @@
-# 🤖 PUBG Discord Update Bot
+🎮 PUBG Update Discord Bot
 
-Bot para Discord desenvolvido em **Python** que monitora fontes oficiais do PUBG e **avisa automaticamente** em um canal do servidor quando há **update ou manutenção programada**, evitando que os jogadores abram o jogo à toa.
+Bot para Discord que verifica automaticamente se haverá update ou manutenção do PUBG e avisa o servidor sem precisar abrir o jogo.
 
----
+O bot também permite consulta manual via comando, ideal para squads que querem se organizar antes de jogar.
 
-## 🎯 Objetivo do Projeto
+🚀 Funcionalidades
 
-Este bot foi criado para resolver um problema real:  
-descobrir se haverá atualização do PUBG **sem precisar abrir o jogo**, usando apenas informações oficiais.
+🔔 Aviso automático
 
-O bot roda 24/7 na nuvem e envia avisos automáticos toda **terça-feira às 13:00**.
+Checa se há update/manutenção do PUBG
 
----
+Executa automaticamente toda terça-feira às 13:00
 
-## ✨ Funcionalidades
+Envia alerta apenas quando realmente existir atualização
 
-- 🔍 Consulta automática à **Steam News API**
-- 🧠 Detecção de update/manutenção por palavras-chave
-- ⏰ Verificação automática semanal (terça-feira às 13h)
-- 📢 Envio de mensagem automática em canal específico
-- 💬 Comando manual `!pubg` para consulta instantânea
-- ☁️ Deploy em cloud (Railway)
-- 🔐 Uso de variáveis de ambiente para segurança
+💬 Comando manual
 
----
+!pubg → verifica imediatamente se há update ou manutenção
 
-## 🛠️ Tecnologias Utilizadas
+☁️ Deploy em nuvem
 
-- **Python 3**
-- **discord.py**
-- **Requests**
-- **Steam Web API (News)**
-- **Railway (deploy 24/7)**
-- **Git & GitHub**
+Funciona 24/7 usando Railway
 
----
+Não depende de VS Code aberto
 
-## 🚀 Como rodar localmente
+🔐 Configuração segura
 
-```bash
-git clone https://github.com/fallonrain/pubg-discord-bot.git
-cd pubg-discord-bot
-pip install -r requirements.txt
+Tokens e IDs via variáveis de ambiente
+
+Nenhuma informação sensível no código
+
+🛠️ Tecnologias utilizadas
+
+Python 3
+
+discord.py
+
+Railway (deploy)
+
+dotenv (ambiente local)
+
+Requests / scraping de notícias
+
+📦 Estrutura do projeto
+pubg-discord-bot/
+│
+├── bot.py               # Bot principal (comando + task automática)
+├── pubg_checker.py      # Verificação de updates/manutenção
+├── requirements.txt     # Dependências do projeto
+├── .gitignore           # Arquivos ignorados (env, venv, etc)
+└── README.md            # Documentação
+
+⚙️ Configuração
+Variáveis de ambiente
+
+O bot utiliza as seguintes variáveis:
+
+DISCORD_TOKEN=seu_token_aqui
+CHANNEL_ID=123456789012345678
+
+
+📌 Em produção, essas variáveis devem ser configuradas diretamente na plataforma de deploy (ex: Railway).
+
+▶️ Executar localmente (opcional)
 python bot.py
+
+
+O bot irá conectar ao Discord e ficar aguardando comandos.
+
+🧪 Comandos disponíveis
+Comando	Descrição
+!pubg	Verifica manualmente se há update ou manutenção
+📅 Funcionamento automático
+
+⏰ Executa a cada 1 hora
+
+📆 Dispara alerta somente terça-feira às 13:00
+
+📢 Evita envio duplicado no mesmo dia
+
+🧠 Silencioso quando não há update
+
+🔒 Segurança
+
+Token do Discord não é versionado
+
+.env está no .gitignore
+
+Configuração via variáveis de ambiente
+
+🎯 Objetivo do projeto
+
+Este projeto foi criado para resolver um problema real de jogadores de PUBG:
+saber se haverá atualização sem precisar abrir o jogo.
+
+Também serve como projeto de portfólio, demonstrando:
+
+Integração com API externa
+
+Bot para Discord
+
+Tasks agendadas
+
+Deploy em nuvem
+
+Boas práticas de segurança
+
+🧑‍💻 Autor
+
+Desenvolvido por fallonrain
+🔗 https://github.com/fallonrain

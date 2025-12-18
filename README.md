@@ -1,112 +1,113 @@
 🎮 PUBG Update Discord Bot
 
-Bot para Discord que verifica automaticamente se haverá update ou manutenção do PUBG e avisa o servidor sem precisar abrir o jogo.
+Bot para Discord que monitora automaticamente updates e manutenções do PUBG, avisando o servidor sem que os jogadores precisem abrir o jogo.
 
-O bot também permite consulta manual via comando, ideal para squads que querem se organizar antes de jogar.
+O projeto resolve um problema real de squads que querem se organizar antes de jogar, oferecendo checagem automática semanal e consulta manual via comando.
 
-🚀 Funcionalidades
+✨ Funcionalidades
 
-🔔 Aviso automático
+🔔 Aviso automático de atualização
 
-Checa se há update/manutenção do PUBG
+Executa toda terça-feira às 13:00
 
-Executa automaticamente toda terça-feira às 13:00
+Envia mensagem apenas se houver update ou manutenção
 
-Envia alerta apenas quando realmente existir atualização
+Evita notificações duplicadas no mesmo dia
 
 💬 Comando manual
 
-!pubg → verifica imediatamente se há update ou manutenção
+!pubg → verifica imediatamente se há update/manutenção
 
-☁️ Deploy em nuvem
+☁️ Execução em nuvem
 
-Funciona 24/7 usando Railway
+Bot online 24/7 via Railway
 
-Não depende de VS Code aberto
+Não depende de execução local
 
 🔐 Configuração segura
 
-Tokens e IDs via variáveis de ambiente
+Uso de variáveis de ambiente
 
-Nenhuma informação sensível no código
+Token do Discord não versionado
 
-🛠️ Tecnologias utilizadas
+🛠️ Tecnologias
 
 Python 3
 
 discord.py
 
-Railway (deploy)
+Railway
 
-dotenv (ambiente local)
+dotenv
 
-Requests / scraping de notícias
+Requests
 
-📦 Estrutura do projeto
+📁 Estrutura do projeto
 pubg-discord-bot/
-│
-├── bot.py               # Bot principal (comando + task automática)
-├── pubg_checker.py      # Verificação de updates/manutenção
-├── requirements.txt     # Dependências do projeto
-├── .gitignore           # Arquivos ignorados (env, venv, etc)
+├── bot.py               # Bot principal (comandos + task automática)
+├── pubg_checker.py      # Lógica de verificação de updates
+├── requirements.txt     # Dependências
+├── .gitignore           # Arquivos ignorados
 └── README.md            # Documentação
 
 ⚙️ Configuração
-Variáveis de ambiente
 
-O bot utiliza as seguintes variáveis:
+O bot utiliza as seguintes variáveis de ambiente:
 
-DISCORD_TOKEN=seu_token_aqui
-CHANNEL_ID=123456789012345678
+DISCORD_TOKEN=seu_token_do_discord
+CHANNEL_ID=id_do_canal_para_notificacoes
 
 
-📌 Em produção, essas variáveis devem ser configuradas diretamente na plataforma de deploy (ex: Railway).
+Em produção, essas variáveis devem ser configuradas diretamente na plataforma de deploy (Railway).
 
-▶️ Executar localmente (opcional)
+▶️ Execução local (opcional)
 python bot.py
 
 
-O bot irá conectar ao Discord e ficar aguardando comandos.
+Após iniciar, o bot ficará aguardando comandos no Discord.
 
-🧪 Comandos disponíveis
+💬 Comandos disponíveis
 Comando	Descrição
 !pubg	Verifica manualmente se há update ou manutenção
-📅 Funcionamento automático
+⏱️ Funcionamento automático
 
-⏰ Executa a cada 1 hora
+Verificação executada a cada 60 minutos
 
-📆 Dispara alerta somente terça-feira às 13:00
+Notificação automática apenas:
 
-📢 Evita envio duplicado no mesmo dia
+na terça-feira
 
-🧠 Silencioso quando não há update
+às 13:00
+
+quando existe update confirmado
 
 🔒 Segurança
 
-Token do Discord não é versionado
+Token do Discord não está no repositório
 
-.env está no .gitignore
+Arquivo .env ignorado pelo Git
 
-Configuração via variáveis de ambiente
+Configuração sensível feita via variáveis de ambiente
 
 🎯 Objetivo do projeto
 
-Este projeto foi criado para resolver um problema real de jogadores de PUBG:
-saber se haverá atualização sem precisar abrir o jogo.
+Este projeto foi desenvolvido como:
 
-Também serve como projeto de portfólio, demonstrando:
+Solução prática para jogadores de PUBG
 
-Integração com API externa
+Exercício de integração com APIs externas
 
-Bot para Discord
+Demonstração de:
 
-Tasks agendadas
+bots para Discord
 
-Deploy em nuvem
+tarefas agendadas
 
-Boas práticas de segurança
+deploy em nuvem
 
-🧑‍💻 Autor
+boas práticas de configuração e segurança
+
+👤 Autor
 
 Desenvolvido por fallonrain
-🔗 https://github.com/fallonrain
+GitHub: https://github.com/fallonrain

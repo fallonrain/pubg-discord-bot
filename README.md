@@ -108,6 +108,3 @@ boas práticas de segurança
 👤 Autor
 Desenvolvido por fallonrain
 🔗 https://github.com/fallonrain
-
-yaml
-Copy code
